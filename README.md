@@ -1,3 +1,3 @@
 # blog
-create a blog by koa2 linvodb3
+create a blog by koa linvodb3 react
 

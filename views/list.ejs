@@ -1,0 +1,30 @@
+<%include layout.ejs%>
+  <link href="stylesheets/api.css" rel="stylesheet">
+  <script type="text/javascript" src='javascripts/register.js'></script>
+  <body>
+   
+    <div class="dropdown theme-dropdown clearfix">
+      <a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">工程 <span class="caret"></span></a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <% if (projects.length<=0) { %>  
+          <div class="form-signin">你还没有工程</div>
+        <% }else{ 
+          for(var i=0;i<projects.length;i++){
+            var project = projects[i];
+            if(i == 0){
+        %>
+        <li class="active"><%=project%></li>
+        <%}else{%>
+        <li ><%=project%></li>
+        <%}}}%>
+      </ul>
+    </div>
+
+
+    <!-- <div class="form-signin">工程</div><select class="form-signin"></select>
+    <button class="form-signin" type="submit">添加</button>
+    <% if (projects.length<=0) { %>  
+      <div class="form-signin">你还没有工程</div>
+    <% } %> -->
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<%include layout.ejs%>
+  <link href="stylesheets/login.css" rel="stylesheet">
+  <script type="text/javascript" src='javascripts/register.js'></script>
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" action="/register" method="post" id='register'>
+        <label for="userName" class="sr-only">your true name</label>
+        <input type="text" name='userName' id="userName" class="form-control" placeholder="your true name" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name='pwd' id="password" class="form-control" placeholder="Password" required>
+        <label for="secondPassword" class="sr-only">Password</label>
+        <input type="password"  id="secondPassword" class="form-control" placeholder="confirmPassword" required>
+        <!-- <label for="type" class="sr-only"></label> -->
+        <select id='type' name='type' class="form-control">
+          <option value="server">server</option>
+          <option value="web">web</option>
+          <option value="phone">phone</option>
+        </select>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block"  type="submit">Register</button>
+      </form>
+    </div> <!-- /container -->
+  </body>
+</html>
