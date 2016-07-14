@@ -1,12 +1,13 @@
 var router = require('koa-router')();
 
 //登录页面
-router.get('/', function*(next) {
+router.get('/*', function*(next) {
 	try {
-		yield this.render('index', {
-			title: 'Have a good time!',
-			msg: ''
-		});
+		this.response.send('../public/*')
+		// yield this.render('index', {
+		// 	title: 'Have a good time!',
+		// 	msg: ''
+		// });
 	} catch (e) {
 		console.log(e);
 	}

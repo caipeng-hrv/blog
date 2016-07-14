@@ -4,7 +4,7 @@ var app = require('koa')()
   , http = require('http');
 
 //加载db
-require('./modules/db');
+// require('./modules/db');
 var router = require('./routes/index');
 var bodyParser = require('koa-body');
 app.use(bodyParser());
