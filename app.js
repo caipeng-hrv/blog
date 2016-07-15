@@ -3,8 +3,10 @@ var app = require('koa')()
   , views = require('koa-views')
   , http = require('http');
 
-//加载db
+//加载leveldb
 require('./modules/db');
+//加载mongodb
+require('./modules/mongodb');
 var router = require('./routes/index');
 var bodyParser = require('koa-body');
 app.use(bodyParser());
@@ -25,7 +27,6 @@ app.use(function *(next){
 app.use(require('koa-static')(__dirname + '/public'));
 
 // routes definition
-app.use(router.routes());
 
 // mount root routes  
 app.use(router.routes());
