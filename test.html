@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    var time = 0;
+    setInterval(function(){
+    	document.getElementById('iframe').src = 'http://localhost:3000'
+        time ++;
+        console.log(time)
+       // $('#iframe').attr('src') = 'http://www.baidu.com';
+    },500)
+	
+</script>
+<div>
+	<h1>hello</h1>
+</div>
+<iframe src="" id ="iframe" height="300px" width="600px"></iframe>

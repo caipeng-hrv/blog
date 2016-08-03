@@ -1,13 +1,15 @@
 var app = require('koa')()
   , logger = require('koa-logger')
   , views = require('koa-views')
+  , cors = require('kcors')
   , http = require('http');
-
+require('./config/setting');
 //加载db
 // require('./modules/db');
 var router = require('./routes/index');
 var bodyParser = require('koa-body');
 app.use(bodyParser());
+
 // global middlewares
 app.use(views('views', {
   root: __dirname + '/views',
@@ -23,11 +25,9 @@ app.use(function *(next){
 });
 
 app.use(require('koa-static')(__dirname + '/public'));
-
+app.use(cors());
 // routes definition
 app.use(router.routes());
 
-// mount root routes  
-app.use(router.routes());
-http.createServer(app.callback()).listen(3000);
+http.createServer(app.callback()).listen(9000);
 console.log('this server listening 3000')
